@@ -21,3 +21,23 @@
 
 ## 09/10 (3주차)      
 - route(라우트)는 "경로"를 의미하고, routing(라우팅)은 "경로를 찾아가는 과정"을 의미합니다.
+- routing이란 사용자가 요청한 URL에 따라 해당 URL에 맞는 페이지를 보여주는 것이다. 
+- routes는 route의 복수형으로 route를 묶어주는 역할을 하고 기존의 switch의 역할을 하게 됩니다. routes를 사용하지 않고 route를 나열한다면 조건에 맞는 route를 다 보여주게 됩니다. route가 실질적인 역할을 합니다.
+
+## 09/17 (4주차)
+- git checkout vs git switch 차이     
+-> branch 명령은이동 할 수 없음       
+-> switch 와 checkout은 branch를 만들기만 할 수는 없고, 만들고 바로 이동합니다.        
+-> 참고로 branch 명령은 branch의 생성, 삭제, 확인 등을 할 때 사용합니다.
+
+- Creating a layout (레이아웃 만들기)        
+-> layout은 여러 페이지에서 공유되는 UI 입니다.      
+-> layout은 네비게이션에서 state 및 상호작용을 유지하며, 다시 렌더링 되지는 않습니다.      
+-> layout 파일에서 React 컴포넌트의 default export를 사용하여 layout을 정의할 수 있습니다.      
+-> layout 컴포넌트는 page 또는 다른 layout이 될 수 있는 children prop을 허용해야 합니다.       
+-> 루트 레이아웃은 필수이며, html 및 body 태그를 포함해야 합니다.      
+-> 중첩 라우트는 다중 URL 세그먼트로 구성된 라우트입니다.    
+
+- slug의 이해      
+-> 데이터 소스가 크다면 .find는 0(n)이므로 DB 쿼리로 바꿔야합니다.       
+: 0(n)은 알고리즘의 시간 복잡도가 입력 데이터의 크기 n에 비례하여 시간이나 메모리 사용량이 선형적으로 증가하는 것을 의미합니다.
