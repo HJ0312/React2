@@ -41,3 +41,13 @@
 - slug의 이해      
 -> 데이터 소스가 크다면 .find는 0(n)이므로 DB 쿼리로 바꿔야합니다.       
 : 0(n)은 알고리즘의 시간 복잡도가 입력 데이터의 크기 n에 비례하여 시간이나 메모리 사용량이 선형적으로 증가하는 것을 의미합니다.
+
+## 09/24 (5주차)
+- searchParams 란?     
+-> URL의 쿼리 문자열(Query String)을 읽는 방법입니다.     
+-> 여기서 category-shoes, page=2가 search parameters 입니다.     
+-> searchParams는 컴포넌트의 props로 전달되며, 내부적으로는 URLSearchParams 처럼 작동합니다.
+- 왜 "동적 렌더링"이 되는가?     
+- Next.js에서 페이지는 크게 정적(static) 또는 동적(dynamic)으로 렌더링될 수 있습니다.
+- searchParams는 요청이 들어와야만 값을 알 수 있기 때문에, Next.js는 이 페이지를 정적으로 미리 생성할 수 없고, 요청이 올 때마다 새로 렌더링해야 합니다.
+- 따라서 해당 페이지는 자동으로 동적 렌더링(dynamic rendering)으로 처리됩니다.
