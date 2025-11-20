@@ -1,7 +1,65 @@
 # 202130217 양하진
 
 ## 11/19
-#### 
+#### CSS Modules
+- CSS 모듈은 **고유한 클래스 이름을 생성하여 CSS, 범위를 로컬로 지정**합니다.
+- 이를 통해 이름 충돌에 대한 걱정 없이 다른 파일에서 동일한 클래스를 사용할 수 있습니다.
+- CSS 모듈 사용을 시작하려면 **.module.css 확장자**가 있는 새 파일을 만들고, app 디렉토리의 컴포넌트로 가져옵니다.
+
+#### Global(전역) CSS
+1. 전역적으로 **한 번만 적용**되어야 하는 스타일을 global.css에 선언해서 사용합니다. 예를 들어 Tailwind의 기본 스타일(tailwindcss)을 global에 import합니다.
+2. **대부분의 컴포넌트 스타일은 Tailwind로 처리**합니다.
+3. **Tailwind로 처리하기 어려운 특정 컴포넌트**에 한해서 **CSS Modules로 커스텀 스타일**을 만들어 사용합니다.
+
+#### Next.js에서 추천하는 스타일링 방법
+[ Global Styles = 전체 앱에 공통 적용되는 스타일 ]
+- 대표적인 Global Style이 적용되는 예는 다음과 같습니다.
+1. html,body 기본 스타일
+2. reset 스타일
+3. 전역 폰트 import
+4. 전역 색상/레이아웃 규칙
+5. 공통 animation 정의 등
+
+[ Tailwind CSS = 대부분의 "컴포넌트 스타일링" ]
+- Tailwind는 컴포넌트 단위 스타일 작성에 최적화되어 있습니다.
+1. margin/padding
+2. flex/gird 레이아웃
+3. border, colorhover, transition
+4. 반응형 클래스 등
+
+- 위의 예가 포함되는 대부분의 컴포넌트는 Tailwind로 스타일링을 할 경우 생산성을 향상시키고, 빠른 유지보수에도 유리합니다.
+
+#### Bootstrap 실습(외부 스타일 시트)
+- 따라서 Bootstrap과 같은 **전역적으로 강제 주입하는 CSS 프레임워크는 주의**해야 합니다. 
+- 전역 스타일을 페이지 전체에 강제로 주입하는 라이브러리들은 다음과 같습니다.
+
+1. Bootstrap : 
+- *, css 를 import 하면 모든 HTML 태그에 기본 스타일 규칙이 적용됨.
+- 버튼, 폼, typography 등이 global reset 수준으로 변경됨.
+- 다른 스타일과 쉽게 충돌 가능성 있음.
+
+2. Bulma :
+- class 기반이긴 하지만 모든 요소(html, body, button 등)에 글로벌 스타일 적용.
+- Bootstrap처럼 전체 애플리케이션 스타일이 바뀜.
+
+3. Foundation (Zurb Foundation)
+- Bootstrap과 매우 유사한 구조.
+- normalize + 전역 스타일이 애플리케이션 전체에 적용됨.
+
+4. Semantic UI / Formantic UI
+- 컴포넌트 스타일이 global CSS로 로드됨.
+- ui.button 같은 네임스페이스가 있지만 전역 단위로 적용됨.
+- 스타일 충돌 가능성 있음.
+
+5. Materialize CSS
+- 구글 Material Design 스타일도 전역 적용.
+- HTML 기본 요소들의 스타일이 변함.
+
+6. normalize.css / reset.css / sanitize.css
+- 라이브러리는 아니지만, 전역 리셋.
+- < h1 >, < p >, < ul > 등의 기본 마진/패딩이 전부 변경됨.
+- 웹 전체 레이아웃에 영향을 주므로 반드시 상위 레벨에서만 사용해야 함.
+
 
 ## 11/12
 #### 스트리밍
